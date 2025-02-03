@@ -1,19 +1,33 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { StackScreenProps } from '@react-navigation/stack';
 
-export const ScreenHome = () => {
-  return (
-    <View style={{
+
+interface Props extends StackScreenProps<any, any> { };
+
+export const ScreenHome = ({ navigation }: Props) => {
+
+
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>Bienvenido a la App</Text>
+            <Button title="Iniciar Sesión" onPress={() => navigation.navigate('Login')} />
+            <Button title="Registrarse" onPress={() => navigation.navigate('Register')} />
+        </View>
+    );
+};
+const styles = StyleSheet.create({
+    container: {
         flex: 1,
-        backgroundColor: 'red',
-        justifyContent: 'center'
-      }}>
-        <Text style={{
-          fontSize: 50,
-          textAlign: 'center'
-        }}>
-          Hola Mundo
-        </Text>
-      </View>
-  )
-}
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 20,
+    },
+});
+
+export default ScreenHome;

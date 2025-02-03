@@ -4,16 +4,13 @@ import {
   NavigationContainer,
 } from '@react-navigation/native';
 import { StackNavigator } from './src/navigator/StackNavigator'
-import { Button } from '@react-navigation/elements';
 
 const app=()=> {
 
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+  return (  
       <NavigationContainer>
         <StackNavigator/>
       </NavigationContainer>
-    </View>
   );
 }
 

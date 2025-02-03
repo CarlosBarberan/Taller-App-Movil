@@ -9,6 +9,7 @@ const Stack = createStackNavigator();
 
 export const StackNavigator=() => {
     return (
+        
         <Stack.Navigator>
             <Stack.Screen name="Home" component={ScreenHome} />
             <Stack.Screen name="Login" component={ScreenLogin} />
