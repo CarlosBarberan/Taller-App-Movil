@@ -1,11 +1,22 @@
-import React from 'react'
-import { View, Text } from 'react-native';
-import { ScreenHome } from './src/screens/ScreenHome';
+import * as React from 'react';
+import { View } from 'react-native';
+import {
+  NavigationContainer,
+} from '@react-navigation/native';
+import { StackNavigator } from './src/navigator/StackNavigator'
+import { Button } from '@react-navigation/elements';
 
-export const App = () => {
+const app=()=> {
+
   return (
-    <ScreenHome/>
-  )
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <NavigationContainer>
+        <StackNavigator/>
+      </NavigationContainer>
+    </View>
+  );
 }
 
-export default App;
+
+
+export default  app;
